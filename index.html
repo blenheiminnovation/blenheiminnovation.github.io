@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioAcoustic Stream Engine — Blenheim Palace Innovation</title>
+  <meta name="description" content="BASE listens to nature around the clock — identifying birds, bats, bees, insects, and soil life using AI. Built at Blenheim Palace to advance open acoustic biodiversity monitoring.">
+  <meta property="og:title" content="BioAcoustic Stream Engine (BASE)">
+  <meta property="og:description" content="Real-time acoustic biodiversity monitoring at Blenheim Palace. Listen. Analyse. Protect.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/blenheiminnovation/BioAcousticStreamEngine/main/viewer/assets/icons/icon-512.png">
+  <meta name="theme-color" content="#060e07">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <img src="https://raw.githubusercontent.com/blenheiminnovation/BioAcousticStreamEngine/main/viewer/assets/icons/icon-512.png" alt="BASE" class="nav-icon">
+        <span>BASE</span>
+      </div>
+      <div class="nav-links">
+        <a href="#what-we-monitor">What we monitor</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#screenshots">Gallery</a>
+        <a href="https://github.com/blenheiminnovation/BioAcousticStreamEngine" target="_blank" class="btn-nav">GitHub ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <div class="hero-badge">Blenheim Palace Innovation</div>
+      <h1>Listening to nature,<br>around the clock.</h1>
+      <p class="hero-sub">
+        BASE is an open-source platform that listens continuously to the natural world —
+        identifying birds, bats, bees, and more using AI. Built at Blenheim Palace to bring
+        acoustic biodiversity monitoring within reach of every conservation team.
+      </p>
+      <div class="hero-actions">
+        <a href="https://github.com/blenheiminnovation/BioAcousticStreamEngine" target="_blank" class="btn-primary">View on GitHub</a>
+        <a href="#what-we-monitor" class="btn-ghost">Learn more ↓</a>
+      </div>
+      <div class="hero-tagline">Listen. Analyse. Protect.</div>
+    </div>
+    <div class="hero-scroll-hint">↓</div>
+  </section>
+
+  <!-- ── Mission ── -->
+  <section class="mission">
+    <div class="container">
+      <blockquote>
+        "Technology can bring people closer to the natural world. By making acoustic biodiversity
+        monitoring open, accessible, and shareable, we can engage more people with nature —
+        learning together, sharing what we hear, and building a deeper collective understanding
+        of the living world around us."
+      </blockquote>
+      <cite>— David Green, Head of Innovation and AI, Blenheim Palace</cite>
+    </div>
+  </section>
+
+  <!-- ── What we monitor ── -->
+  <section id="what-we-monitor" class="monitors">
+    <div class="container">
+      <div class="section-label">What we monitor</div>
+      <h2>Six windows into the living world</h2>
+      <p class="section-sub">Each microphone can run multiple classifiers simultaneously. BASE works around the clock, pausing only when there is nothing to hear.</p>
+      <div class="monitor-grid">
+
+        <div class="monitor-card">
+          <div class="monitor-icon">🐦</div>
+          <h3>Birds</h3>
+          <p>Powered by BirdNET — a deep learning model from Cornell Lab of Ornithology — BASE identifies over 6,000 species from three-second audio clips. Every song, call, and contact note is logged with a confidence score and timestamp.</p>
+          <div class="monitor-tag">BirdNET · Cornell Lab of Ornithology</div>
+        </div>
+
+        <div class="monitor-card">
+          <div class="monitor-icon">🦇</div>
+          <h3>Bats</h3>
+          <p>Bats echolocate far beyond the range of human hearing. An ultrasonic microphone captures calls at 384,000 samples per second; BASE identifies 17 UK and European species and can pitch calls down into the audible range so you can listen in.</p>
+          <div class="monitor-tag">BatDetect2 · University of Edinburgh</div>
+        </div>
+
+        <div class="monitor-card">
+          <div class="monitor-icon">🐝</div>
+          <h3>Bees &amp; Pollinators</h3>
+          <p>Every insect in flight produces a characteristic wing-beat buzz. BASE detects insect flight activity as a proxy for pollinator presence — a rapid, non-invasive way to monitor how pollinators are using a habitat through the day.</p>
+          <div class="monitor-tag">BuzzDetect · OSU Bee Lab</div>
+        </div>
+
+        <div class="monitor-card">
+          <div class="monitor-icon">🦗</div>
+          <h3>Grasshoppers &amp; Crickets</h3>
+          <p>Orthoptera — grasshoppers, bush crickets, and field crickets — stridulate at characteristic frequencies. BASE runs a custom-trained AI to identify species from their song, tracking which grassland insects are present and how active they are.</p>
+          <div class="monitor-tag">ResNet18 · Blenheim Innovation</div>
+        </div>
+
+        <div class="monitor-card">
+          <div class="monitor-icon">🌱</div>
+          <h3>Soil Health</h3>
+          <p>A carbon-fibre probe conducts sub-surface vibration — earthworm movement, soil arthropod activity, root interactions — up to a contact microphone. The Soil Acoustic Index filters out traffic, aircraft, and machinery to leave only biological signal.</p>
+          <div class="monitor-tag">SAI v2 · Blenheim Innovation</div>
+        </div>
+
+        <div class="monitor-card">
+          <div class="monitor-icon">💧</div>
+          <h3>Water &amp; Aquatic Life</h3>
+          <p>A submersible hydrophone in the Great Lake listens for fish choruses, spawning calls, and invertebrate clicks. The Water Acoustic Index scores each recording against flow noise and boat motors, isolating genuine biological activity.</p>
+          <div class="monitor-tag">WAI · Blenheim Innovation</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How it works ── -->
+  <section id="how-it-works" class="how">
+    <div class="container">
+      <div class="section-label">How it works</div>
+      <h2>From microphone to map, in seconds</h2>
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h3>Continuous listening</h3>
+            <p>Microphones placed around the estate stream audio into BASE around the clock. Each monitoring location has its own schedule — waking at dawn chorus, dusk, or any window you configure.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h3>AI identification</h3>
+            <p>Each three-second clip is passed through the relevant AI model. The model compares the sound's acoustic fingerprint against thousands of reference recordings and returns a species name with a confidence score.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h3>Live dashboard</h3>
+            <p>Every detection appears on the dashboard in real time — species name, confidence, monitoring location, and weather conditions at the moment of detection. Audio clips are saved for review and download.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h3>Analytics &amp; trends</h3>
+            <p>The Analytics page shows species activity over time, trends against previous periods, and maps every monitoring location. Detection data is exportable as CSV for further analysis or publication.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Screenshots ── -->
+  <section id="screenshots" class="screenshots">
+    <div class="container">
+      <div class="section-label">The platform</div>
+      <h2>Built for field teams, not data scientists</h2>
+      <p class="section-sub">A browser-based dashboard means no software to install. Run BASE on a Raspberry Pi, a laptop, or a field server — and monitor it from anywhere on the same network.</p>
+      <div class="screenshot-grid">
+        <div class="screenshot-feature">
+          <img src="https://raw.githubusercontent.com/blenheiminnovation/BioAcousticStreamEngine/main/docs/screenshots/Dashboard.png" alt="BASE Dashboard — live detection feed" loading="lazy">
+          <div class="screenshot-label">Live dashboard — detections, spectrogram, and per-microphone controls</div>
+        </div>
+        <div class="screenshot-side">
+          <div class="screenshot-item">
+            <img src="https://raw.githubusercontent.com/blenheiminnovation/BioAcousticStreamEngine/main/docs/screenshots/Analytics.png" alt="Analytics — activity chart and location map" loading="lazy">
+            <div class="screenshot-label">Analytics — trends, species cards, and monitoring map</div>
+          </div>
+          <div class="screenshot-item">
+            <img src="https://raw.githubusercontent.com/blenheiminnovation/BioAcousticStreamEngine/main/docs/screenshots/Gallery.png" alt="Species Gallery" loading="lazy">
+            <div class="screenshot-label">Gallery — live photo grid with confidence scores</div>
+          </div>
+          <div class="screenshot-item">
+            <img src="https://raw.githubusercontent.com/blenheiminnovation/BioAcousticStreamEngine/main/docs/screenshots/Viewer.png" alt="BASE Viewer — ambient kiosk display" loading="lazy">
+            <div class="screenshot-label">BASE Viewer — ambient kiosk display for public screens</div>
+          </div>
+          <div class="screenshot-item">
+            <img src="https://raw.githubusercontent.com/blenheiminnovation/BioAcousticStreamEngine/main/docs/screenshots/Clips.png" alt="Clips library" loading="lazy">
+            <div class="screenshot-label">Clips library — browse and play saved recordings</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Open source ── -->
+  <section class="opensource">
+    <div class="container opensource-inner">
+      <div class="opensource-text">
+        <div class="section-label">Open source</div>
+        <h2>Built to be shared</h2>
+        <p>BASE is released under the MIT Licence. Conservation practitioners, researchers, and developers are welcome to use it, adapt it, and build on it. If you deploy BASE in your own work, we'd love to hear about it.</p>
+        <p>Installation takes a single script. BASE runs on any Linux machine — from a Raspberry Pi in a field box to a server in an estate office.</p>
+        <div class="opensource-actions">
+          <a href="https://github.com/blenheiminnovation/BioAcousticStreamEngine" target="_blank" class="btn-primary">View on GitHub</a>
+          <a href="https://github.com/blenheiminnovation/BioAcousticStreamEngine/blob/main/README.md" target="_blank" class="btn-ghost">Read the docs ↗</a>
+        </div>
+      </div>
+      <div class="opensource-install">
+        <div class="install-label">Install in one step</div>
+        <pre><code>git clone https://github.com/blenheiminnovation/
+    BioAcousticStreamEngine.git
+cd BioAcousticStreamEngine
+bash install.sh</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Credits ── -->
+  <section class="credits">
+    <div class="container">
+      <div class="section-label">Powered by open research</div>
+      <div class="credit-row">
+        <div class="credit">
+          <div class="credit-icon">🐦</div>
+          <div><strong>BirdNET-Analyzer</strong><br>Cornell Lab of Ornithology &amp; TU Chemnitz</div>
+        </div>
+        <div class="credit">
+          <div class="credit-icon">🦇</div>
+          <div><strong>BatDetect2</strong><br>University of Edinburgh, Caltech &amp; UCL</div>
+        </div>
+        <div class="credit">
+          <div class="credit-icon">🐝</div>
+          <div><strong>BuzzDetect v1.0.1</strong><br>OSU Bee Lab, Ohio State University</div>
+        </div>
+        <div class="credit">
+          <div class="credit-icon">🦗</div>
+          <div><strong>OpenSoundscape</strong><br>Kitzes Lab, University of Pittsburgh</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <img src="https://raw.githubusercontent.com/blenheiminnovation/BioAcousticStreamEngine/main/viewer/assets/icons/icon-512.png" alt="BASE">
+          <span>BioAcoustic Stream Engine</span>
+        </div>
+        <p>Created by <strong>David Green</strong> — Head of Innovation and AI, Blenheim Palace</p>
+        <p class="footer-muted">MIT Licence · Open Source</p>
+      </div>
+      <div class="footer-right">
+        <div class="footer-contributors">
+          <div class="footer-contrib-label">Contributors</div>
+          Harry Hanson · Tawhid Shahrior · Dr. Matthias Rolf ·
+          Max Caminow · Dr. Dave Gasca · Arnaud Fontannaz · Filipe Salbany
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Blenheim Palace Innovation Team</span>
+      <a href="https://github.com/blenheiminnovation/BioAcousticStreamEngine" target="_blank">GitHub ↗</a>
+    </div>
+  </footer>
+
+</body>
+</html>
