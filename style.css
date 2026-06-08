@@ -71,10 +71,10 @@ a { color: inherit; text-decoration: none; }
 
 /* External link icon (replaces ↗ unicode which renders as emoji on iOS) */
 .ext-icon {
-  width: 0.75em;
-  height: 0.75em;
-  vertical-align: -0.05em;
-  margin-left: 3px;
+  width: 0.6em;
+  height: 0.6em;
+  vertical-align: -0.02em;
+  margin-left: 2px;
   display: inline;
   flex-shrink: 0;
 }

@@ -40,7 +40,7 @@
       <p class="hero-sub">
         BASE is an open-source platform that listens continuously to the natural world —
         identifying birds, bats, bees, and more using AI. Built at Blenheim Palace to bring
-        acoustic biodiversity monitoring within reach of every conservation team.
+        acoustic biodiversity monitoring within reach of everyone.
       </p>
       <div class="hero-actions">
         <a href="https://github.com/blenheiminnovation/BioAcousticStreamEngine" target="_blank" class="btn-primary">View on GitHub</a>
@@ -75,26 +75,31 @@
         <div class="monitor-card">
           <div class="monitor-icon">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- tail feathers -->
-              <path d="M10 29L3 24M10 31L3 34M11 34L5 38" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-              <!-- wing -->
-              <path d="M13 25C15 18 22 17 27 21C23 25 17 27 13 25Z" fill="white" opacity="0.65"/>
+              <!-- tail: solid filled fan, low behind body -->
+              <path d="M12 28C8 27 5 30 5 35C8 34 11 31 12 30Z" fill="white"/>
               <!-- body -->
-              <ellipse cx="22" cy="30" rx="11" ry="7.5" fill="white"/>
+              <ellipse cx="22" cy="29" rx="11" ry="7" transform="rotate(-8 22 29)" fill="white"/>
               <!-- head -->
-              <circle cx="32" cy="22" r="7" fill="white"/>
-              <!-- beak -->
-              <path d="M38 20L46 18L38 24Z" fill="white"/>
+              <circle cx="33" cy="21" r="7" fill="white"/>
+              <!-- beak: short conical, two mandibles -->
+              <path d="M39 18L44 17L39 22Z" fill="white"/>
+              <path d="M39 22L43 23L39 24Z" fill="white"/>
               <!-- eye -->
-              <circle cx="34" cy="21" r="2.2" fill="rgba(6,14,7,0.9)"/>
-              <circle cx="33.3" cy="20.3" r="0.7" fill="white"/>
-              <!-- legs -->
-              <line x1="19" y1="37" x2="16" y2="44" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
-              <line x1="23" y1="38" x2="20" y2="44" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
-              <line x1="16" y1="44" x2="12" y2="45" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="16" y1="44" x2="19" y2="46" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="20" y1="44" x2="17" y2="46" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="20" y1="44" x2="24" y2="46" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="35" cy="20" r="2.5" fill="rgba(6,14,7,0.95)"/>
+              <circle cx="34.3" cy="19.3" r="0.8" fill="white"/>
+              <!-- wing fold line (primary feather edge) -->
+              <path d="M14 27C18 21 25 20 28 23" stroke="rgba(0,0,0,0.2)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <!-- tarsus/legs -->
+              <line x1="18" y1="35" x2="15" y2="42" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <line x1="23" y1="36" x2="20" y2="42" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <!-- left foot: 3 toes (2 forward, 1 back) -->
+              <line x1="15" y1="42" x2="10" y2="45" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="15" y1="42" x2="15" y2="46" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="15" y1="42" x2="19" y2="46" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <!-- right foot -->
+              <line x1="20" y1="42" x2="16" y2="45" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="20" y1="42" x2="20" y2="46" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="20" y1="42" x2="24" y2="46" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
           </div>
           <h3>Birds</h3>
@@ -105,24 +110,22 @@
         <div class="monitor-card">
           <div class="monitor-icon">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- left wing outer lobe -->
-              <path d="M4 17C6 13 10 13 14 15C12 19 8 22 4 17Z" fill="white" opacity="0.8"/>
-              <!-- left wing main -->
-              <path d="M20 23C16 19 10 19 4 17C4 23 8 28 14 27L17 30Z" fill="white"/>
-              <!-- right wing outer lobe -->
-              <path d="M44 17C42 13 38 13 34 15C36 19 40 22 44 17Z" fill="white" opacity="0.8"/>
-              <!-- right wing main -->
-              <path d="M28 23C32 19 38 19 44 17C44 23 40 28 34 27L31 30Z" fill="white"/>
-              <!-- body -->
-              <ellipse cx="24" cy="28" rx="5" ry="8" fill="white"/>
+              <!-- left wing: smooth patagium — leading edge arcs to tip, trailing edge curves back to foot -->
+              <path d="M19 27C15 23 8 20 3 21C4 25 7 29 12 30L18 34Z" fill="white"/>
+              <!-- right wing -->
+              <path d="M29 27C33 23 40 20 45 21C44 25 41 29 36 30L30 34Z" fill="white"/>
+              <!-- uropatagium (tail membrane between legs) -->
+              <path d="M18 35C16 40 19 44 24 44C29 44 32 40 30 35Z" fill="white" opacity="0.6"/>
+              <!-- body: narrow elongated oval -->
+              <ellipse cx="24" cy="30" rx="5" ry="8" fill="white"/>
               <!-- head -->
-              <circle cx="24" cy="20" r="6" fill="white"/>
-              <!-- ears -->
-              <path d="M19 15L17 8L22 14Z" fill="white"/>
-              <path d="M29 15L31 8L26 14Z" fill="white"/>
-              <!-- eyes -->
-              <circle cx="21" cy="19" r="1.5" fill="rgba(6,14,7,0.9)"/>
-              <circle cx="27" cy="19" r="1.5" fill="rgba(6,14,7,0.9)"/>
+              <circle cx="24" cy="21" r="6" fill="white"/>
+              <!-- ears: tall narrow triangles, characteristic of UK species -->
+              <path d="M20 17L18 7L23 16Z" fill="white"/>
+              <path d="M28 17L30 7L25 16Z" fill="white"/>
+              <!-- eyes: small, set low -->
+              <circle cx="21.5" cy="22" r="1.5" fill="rgba(6,14,7,0.95)"/>
+              <circle cx="26.5" cy="22" r="1.5" fill="rgba(6,14,7,0.95)"/>
             </svg>
           </div>
           <h3>Bats</h3>
@@ -250,7 +253,7 @@
     <div class="container">
       <div class="section-label">Typical setup</div>
       <h2>Everything you need in one box</h2>
-      <p class="section-sub">A small PC, a handful of microphones, and a power supply. BASE handles the rest — no cloud account, no subscription, no data leaving the site.</p>
+      <p class="section-sub">A small PC, a handful of microphones, and a power supply. BASE handles the rest.</p>
       <img src="Typical Setup.png" alt="Typical BASE setup — BASE station, microphones for birds, bats and grasshoppers, soil probe, and hydrophone" class="setup-img">
     </div>
   </section>
@@ -361,13 +364,13 @@ bash install.sh</code></pre>
       <div class="credit-row">
         <div class="credit">
           <div class="credit-icon">
-            <svg viewBox="0 0 32 32" fill="none"><path d="M6 19L2 16M6 21L2 23M7 23L4 26" stroke="white" stroke-width="1.8" stroke-linecap="round"/><path d="M8 17C10 12 15 11 18 14C15 17 11 18 8 17Z" fill="white" opacity="0.65"/><ellipse cx="15" cy="20" rx="7" ry="5" fill="white"/><circle cx="21" cy="15" r="5" fill="white"/><path d="M25 13L30 12L25 16Z" fill="white"/><circle cx="22.5" cy="14" r="1.5" fill="rgba(6,14,7,0.9)"/></svg>
+            <svg viewBox="0 0 32 32" fill="none"><path d="M8 18C5 18 3 20 3 24C5 23 8 21 8 20Z" fill="white"/><ellipse cx="14" cy="19" rx="7" ry="4.5" transform="rotate(-8 14 19)" fill="white"/><circle cx="22" cy="13" r="4.5" fill="white"/><path d="M26 11L30 11L26 14Z" fill="white"/><path d="M26 14L29 15L26 16Z" fill="white"/><circle cx="23.5" cy="12" r="1.7" fill="rgba(6,14,7,0.95)"/><circle cx="23" cy="11.5" r="0.5" fill="white"/><path d="M9 17C12 13 16 12 18 15" stroke="rgba(0,0,0,0.2)" stroke-width="1" fill="none" stroke-linecap="round"/><line x1="12" y1="22" x2="10" y2="28" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="16" y1="23" x2="14" y2="28" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="10" y1="28" x2="7" y2="30" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="10" y1="28" x2="12" y2="30" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="14" y1="28" x2="11" y2="30" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="14" y1="28" x2="16" y2="30" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
           </div>
           <div><strong>BirdNET-Analyzer</strong><br>Cornell Lab of Ornithology &amp; TU Chemnitz</div>
         </div>
         <div class="credit">
           <div class="credit-icon">
-            <svg viewBox="0 0 32 32" fill="none"><path d="M2 11C4 8 7 8 9 10C8 13 5 15 2 11Z" fill="white" opacity="0.8"/><path d="M13 15C10 12 7 12 2 11C2 15 5 19 9 18L11 20Z" fill="white"/><path d="M30 11C28 8 25 8 23 10C24 13 27 15 30 11Z" fill="white" opacity="0.8"/><path d="M19 15C22 12 25 12 30 11C30 15 27 19 23 18L21 20Z" fill="white"/><ellipse cx="16" cy="19" rx="3.5" ry="5" fill="white"/><circle cx="16" cy="13" r="4" fill="white"/><path d="M13 10L11 5L15 9Z" fill="white"/><path d="M19 10L21 5L17 9Z" fill="white"/><circle cx="14" cy="12" r="1.2" fill="rgba(6,14,7,0.9)"/><circle cx="18" cy="12" r="1.2" fill="rgba(6,14,7,0.9)"/></svg>
+            <svg viewBox="0 0 32 32" fill="none"><path d="M13 18C10 15 6 13 2 14C2 16 4 19 8 20L12 22Z" fill="white"/><path d="M19 18C22 15 26 13 30 14C30 16 28 19 24 20L20 22Z" fill="white"/><path d="M12 24C11 26 12 29 16 29C20 29 21 26 20 24Z" fill="white" opacity="0.6"/><ellipse cx="16" cy="20" rx="3.5" ry="5.5" fill="white"/><circle cx="16" cy="14" r="4" fill="white"/><path d="M13 11L12 5L15 10Z" fill="white"/><path d="M19 11L20 5L17 10Z" fill="white"/><circle cx="14" cy="14" r="1.2" fill="rgba(6,14,7,0.95)"/><circle cx="18" cy="14" r="1.2" fill="rgba(6,14,7,0.95)"/></svg>
           </div>
           <div><strong>BatDetect2</strong><br>University of Edinburgh, Caltech &amp; UCL</div>
         </div>
