@@ -7,10 +7,10 @@
   --bg3:       #111f13;
   --surface:   #162019;
   --border:    #1f3022;
-  --primary:   #4adf86;
-  --primary-d: #2ab865;
+  --primary:   #90b20c;
+  --primary-d: #72900a;
   --text:      #e8f0e9;
-  --muted:     #7a9c7e;
+  --muted:     #8a9e6a;
   --radius:    12px;
   --font:      'Inter', sans-serif;
 }
@@ -125,8 +125,8 @@ nav {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(74, 223, 134, 0.07) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(74, 223, 134, 0.04) 0%, transparent 60%);
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(144, 178, 12, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(144, 178, 12, 0.04) 0%, transparent 60%);
 }
 .hero-inner {
   position: relative;
@@ -255,9 +255,14 @@ nav {
   transform: translateY(-2px);
 }
 .monitor-icon {
-  font-size: 2rem;
-  margin-bottom: 16px;
-  line-height: 1;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 18px;
+}
+.monitor-icon svg {
+  width: 48px;
+  height: 48px;
+  display: block;
 }
 .monitor-card h3 {
   font-size: 1.1rem;
@@ -466,7 +471,8 @@ nav {
   gap: 14px;
   align-items: flex-start;
 }
-.credit-icon { font-size: 1.6rem; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+.credit-icon { width: 32px; height: 32px; flex-shrink: 0; margin-top: 2px; }
+.credit-icon svg { width: 32px; height: 32px; display: block; }
 .credit strong { color: #fff; font-size: 0.9rem; display: block; margin-bottom: 2px; }
 .credit div { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
 
