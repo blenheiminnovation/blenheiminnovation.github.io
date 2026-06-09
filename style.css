@@ -371,6 +371,294 @@ nav {
   line-height: 1.7;
 }
 
+/* ── How AI hears ── */
+.ai-hears {
+  padding: 96px 0;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.ai-hears h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.pipeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 64px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.pipeline-step {
+  display: flex;
+  gap: 24px;
+  padding: 28px 32px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  transition: background 0.2s;
+}
+.pipeline-step:last-child { border-bottom: none; }
+.pipeline-step:hover { background: #1a2b1d; }
+.pipeline-num {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: rgba(144, 178, 12, 0.14);
+  border: 1px solid rgba(144, 178, 12, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-top: 2px;
+}
+.pipeline-body h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.pipeline-body p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+.pipeline-body strong { color: var(--text); font-weight: 600; }
+
+.subsection-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.organism-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+.organism-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: border-color 0.2s;
+}
+.organism-card:hover { border-color: rgba(144, 178, 12, 0.3); }
+.organism-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 14px;
+}
+.organism-icon img {
+  width: 40px !important;
+  height: 40px !important;
+  max-width: 40px;
+  max-height: 40px;
+  display: block;
+  object-fit: contain;
+}
+.organism-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.organism-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.organism-card li {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+  padding-left: 12px;
+  position: relative;
+}
+.organism-card li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  opacity: 0.6;
+}
+.organism-card li strong { color: var(--text); font-weight: 600; }
+
+/* ── Soil Acoustic Index ── */
+.soil-index {
+  padding: 96px 0;
+}
+.soil-index h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.sai-intro {
+  max-width: 720px;
+  margin-bottom: 48px;
+}
+.sai-intro p {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.sai-components {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.sai-component {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+}
+.sai-component-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.sai-badge {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: rgba(144, 178, 12, 0.14);
+  border: 1px solid rgba(144, 178, 12, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+.sai-component h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+}
+.sai-component p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+.sai-component p:last-child { margin-bottom: 0; }
+.sai-component ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 12px 0;
+  padding-left: 4px;
+}
+.sai-component li {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.6;
+  padding-left: 14px;
+  position: relative;
+}
+.sai-component li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+.sai-component li strong { color: var(--text); font-weight: 600; }
+.sai-component em { color: var(--text); font-style: italic; }
+
+.formula {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--primary);
+  border-radius: 6px;
+  padding: 14px 20px;
+  margin: 16px 0;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  flex-wrap: wrap;
+}
+.formula-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary);
+  white-space: nowrap;
+}
+.formula-eq {
+  font-size: 0.88rem;
+  color: var(--text);
+}
+.formula-large { padding: 18px 24px; }
+.formula-large .formula-label { font-size: 1.05rem; }
+.formula-large .formula-eq { font-size: 1rem; }
+.formula-note {
+  font-size: 0.82rem !important;
+  color: rgba(138, 158, 106, 0.75) !important;
+  font-style: italic;
+  margin-top: 4px !important;
+}
+
+.sai-final {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+}
+.sai-final h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.sai-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+.sai-term {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.sai-term-name {
+  flex-shrink: 0;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  min-width: 80px;
+}
+.sai-term-desc { color: var(--muted); }
+.sai-note {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
 /* ── Screenshots ── */
 .screenshots {
   padding: 96px 0;

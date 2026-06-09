@@ -25,6 +25,7 @@
       <div class="nav-links">
         <a href="#what-we-monitor">What we monitor</a>
         <a href="#how-it-works">How it works</a>
+        <a href="#how-ai-hears">The science</a>
         <a href="#screenshots">Gallery</a>
         <a href="https://github.com/blenheiminnovation/BioAcousticStreamEngine" target="_blank" class="btn-nav">GitHub<svg class="ext-icon" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 1h2v2M9 1 5.5 4.5M4 2H2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
@@ -180,6 +181,169 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ── How AI hears ── -->
+  <section id="how-ai-hears" class="ai-hears">
+    <div class="container">
+      <div class="section-label">The science</div>
+      <h2>How the AI recognises a species</h2>
+      <p class="section-sub">No specialist knowledge needed — here is exactly what happens between a microphone picking up a sound and BASE logging a species name.</p>
+
+      <div class="pipeline">
+        <div class="pipeline-step">
+          <div class="pipeline-num">1</div>
+          <div class="pipeline-body">
+            <h3>The microphone records a wave</h3>
+            <p>Sound is air pressure changing very rapidly. A microphone turns those pressure changes into an electrical signal — a long, wiggly line of numbers that represents the loudness of the sound at each fraction of a second. On its own, this waveform is hard to read. You cannot look at it and tell whether you are hearing a Robin or a car.</p>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipeline-num">2</div>
+          <div class="pipeline-body">
+            <h3>The computer draws a picture of the sound</h3>
+            <p>A mathematical operation called a Short-Time Fourier Transform slices the recording into tiny overlapping windows and asks: "at this exact moment, how much energy is in each pitch?" The result is a <strong>spectrogram</strong> — an image where left-to-right is time, bottom-to-top is pitch (from deep rumbles at the bottom to high squeaks at the top), and brightness shows how loud each pitch is at each moment. A Robin's song appears as a cluster of bright smears in the mid-range. Traffic appears as a constant bright smear along the bottom. Silence is dark. Every species leaves a different visual fingerprint.</p>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipeline-num">3</div>
+          <div class="pipeline-body">
+            <h3>A neural network looks at the picture</h3>
+            <p>The spectrogram is fed into a deep learning model — a convolutional neural network (CNN). This is the same family of algorithm used to recognise faces in photographs or identify objects in video. It was trained on millions of labelled examples: "this pattern is a Great Tit", "this pattern is a Common Pipistrelle", and so on for thousands of species. Through training it learned which shapes, streaks, and pulses belong to which species — and it can spot those patterns even when mixed with wind noise or birdsong from other birds.</p>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipeline-num">4</div>
+          <div class="pipeline-body">
+            <h3>A confidence score decides the result</h3>
+            <p>The model returns a score between 0 and 1 for every species it knows. A score of 0.9 for Robin means it is very confident; 0.3 means it heard something vaguely Robin-like but is not sure. BASE applies a confidence threshold (0.7 by default, adjustable per species) — only detections above that threshold are logged. Every logged detection links to the saved audio clip so you can listen back and verify.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="subsection-label">What changes between organism types</h3>
+      <div class="organism-grid">
+
+        <div class="organism-card">
+          <div class="organism-icon"><img src="icons/icon_bird.png" alt="Bird"></div>
+          <h4>Birds</h4>
+          <ul>
+            <li><strong>Frequency range:</strong> 0–15 kHz (human hearing range)</li>
+            <li><strong>Window size:</strong> 3-second clips — long enough to capture a full song phrase</li>
+            <li><strong>Model:</strong> BirdNET, trained on over 6,000 species from Cornell Lab's Xeno-canto archive</li>
+            <li><strong>Spectrogram style:</strong> mel-scale (compresses the upper range so quiet high-frequency calls are easier to see)</li>
+          </ul>
+        </div>
+
+        <div class="organism-card">
+          <div class="organism-icon"><img src="icons/icon_bat.png" alt="Bat"></div>
+          <h4>Bats</h4>
+          <ul>
+            <li><strong>Frequency range:</strong> 15–200 kHz — completely above human hearing</li>
+            <li><strong>Sampling rate:</strong> 384,000 samples per second (normal audio uses 44,100)</li>
+            <li><strong>Window size:</strong> milliseconds — a bat pulse lasts 2–15 ms</li>
+            <li><strong>Trick used:</strong> time-stretching shifts calls down into the audible range so you can actually hear them</li>
+            <li><strong>Model:</strong> BatDetect2 identifies 17 UK and European species from the shape, duration, and frequency sweep of each pulse</li>
+          </ul>
+        </div>
+
+        <div class="organism-card">
+          <div class="organism-icon"><img src="icons/icon_grasshopper.png" alt="Grasshopper"></div>
+          <h4>Grasshoppers &amp; Crickets</h4>
+          <ul>
+            <li><strong>Frequency range:</strong> 5–20 kHz</li>
+            <li><strong>Sound production:</strong> stridulation — rubbing legs or wings together to produce a rapid series of clicks that blend into a characteristic song</li>
+            <li><strong>Key signature:</strong> the rhythm and pulse rate of stridulation is species-specific, not just the frequency</li>
+            <li><strong>Model:</strong> a custom ResNet-18 classifier trained at Blenheim on UK Orthoptera recordings, recognising species from both the spectral shape and temporal pattern of the song</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Soil Acoustic Index ── -->
+  <section id="soil-index" class="soil-index">
+    <div class="container">
+      <div class="section-label">Soil monitoring</div>
+      <h2>Inside the Soil Acoustic Index</h2>
+      <p class="section-sub">The ground is full of sound — earthworms moving, beetle larvae chewing, roots growing under tension. The SAI turns a raw underground recording into a single number that reflects the biological richness of the soil.</p>
+
+      <div class="sai-intro">
+        <p>A carbon-fibre probe pressed into the soil picks up vibrations too subtle for the ear. The recording is processed in three stages, each asking a different question about what is in the sound, and the results are combined into one index.</p>
+      </div>
+
+      <div class="sai-components">
+
+        <div class="sai-component">
+          <div class="sai-component-header">
+            <div class="sai-badge">1</div>
+            <h3>NDSI — who is making the noise?</h3>
+          </div>
+          <p>The Normalised Difference Soundscape Index divides the audio spectrum into two bands and compares them:</p>
+          <ul>
+            <li><strong>Anthrophony band (50–300 Hz):</strong> the low-frequency rumble dominated by traffic, machinery, and footsteps — human-made interference.</li>
+            <li><strong>Biophony band (500–2000 Hz):</strong> the mid-range frequencies where soil biology is most active — invertebrates, roots, and microorganisms.</li>
+          </ul>
+          <div class="formula">
+            <span class="formula-label">NDSI</span>
+            <span class="formula-eq">= (Biophony − Anthrophony) ÷ (Biophony + Anthrophony)</span>
+          </div>
+          <p class="formula-note">Result ranges from −1 to +1. Near +1: the recording is dominated by biological activity. Near −1: dominated by human-made interference. Near 0: roughly equal mix.</p>
+        </div>
+
+        <div class="sai-component">
+          <div class="sai-component-header">
+            <div class="sai-badge">2</div>
+            <h3>RMS Gate — is there a real signal?</h3>
+          </div>
+          <p>Root Mean Square (RMS) is simply the average energy in the recording — a measure of how loud the signal is overall. Before any analysis runs, BASE checks that the RMS clears a minimum threshold.</p>
+          <p>This step filters out recordings that contain only electrical background noise, wind interference, or sensor dropout. There is no point running a sophisticated biological analysis on silence. Recordings that fail the RMS gate are flagged as "no signal" and excluded from the index calculation.</p>
+          <div class="formula">
+            <span class="formula-label">Gate</span>
+            <span class="formula-eq">: proceed only if RMS &gt; noise floor threshold</span>
+          </div>
+        </div>
+
+        <div class="sai-component">
+          <div class="sai-component-header">
+            <div class="sai-badge">3</div>
+            <h3>Transient Score — are things moving?</h3>
+          </div>
+          <p>Biological soil activity tends to produce brief, sharp events — an earthworm retracting through its burrow, a beetle larva chewing through organic matter, a root fibre snapping under tension, an ant colony responding to a disturbance. These are <em>transients</em>: sounds that appear suddenly and decay quickly.</p>
+          <p>Continuous sounds like traffic or machinery have a smooth, sustained waveform. Transients have a spiky statistical signature called high kurtosis (the waveform has sharp peaks rather than a steady hum). BASE counts how many kurtosis-spike events occur per second above a set threshold — this is the Transient Score, and it correlates strongly with active soil biology.</p>
+          <div class="formula">
+            <span class="formula-label">T</span>
+            <span class="formula-eq">= events per second where kurtosis &gt; threshold</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="sai-final">
+        <h3>Putting it together</h3>
+        <div class="formula formula-large">
+          <span class="formula-label">SAI</span>
+          <span class="formula-eq">= NDSI × RMS<sub>norm</sub> × (1 + T)</span>
+        </div>
+        <div class="sai-breakdown">
+          <div class="sai-term">
+            <span class="sai-term-name">NDSI</span>
+            <span class="sai-term-desc">ensures the recording is biologically dominated, not drowned out by human-made noise</span>
+          </div>
+          <div class="sai-term">
+            <span class="sai-term-name">RMS<sub>norm</sub></span>
+            <span class="sai-term-desc">confirms a real signal is present and scales its strength (0–1, normalised against the sensor's dynamic range)</span>
+          </div>
+          <div class="sai-term">
+            <span class="sai-term-name">(1 + T)</span>
+            <span class="sai-term-desc">rewards recordings rich in brief biological events — the more transient activity, the higher the score</span>
+          </div>
+        </div>
+        <p class="sai-note">The SAI is tracked over time and compared against seasonal baselines. A sustained drop in SAI can signal a change in soil biology — from compaction, flooding, pesticide use, or long-term ecological change. A rising SAI after rewilding or reduced tillage is a measurable sign of recovery.</p>
+      </div>
+
     </div>
   </section>
 
