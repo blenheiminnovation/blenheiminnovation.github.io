@@ -268,10 +268,14 @@ nav {
   width: 64px;
   height: 64px;
   margin-bottom: 18px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 .monitor-icon img {
-  width: 64px;
-  height: 64px;
+  width: 64px !important;
+  height: 64px !important;
+  max-width: 64px;
+  max-height: 64px;
   display: block;
   object-fit: contain;
 }
