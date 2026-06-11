@@ -344,6 +344,35 @@
         <p class="sai-note">The SAI is tracked over time and compared against seasonal baselines. A sustained drop in SAI can signal a change in soil biology — from compaction, flooding, pesticide use, or long-term ecological change. A rising SAI after rewilding or reduced tillage is a measurable sign of recovery.</p>
       </div>
 
+      <div class="activity-index">
+        <h3>From signal to number: the 1–50 Activity Index</h3>
+        <p>The SAI score is useful for long-term trend analysis, but readings also need an at-a-glance level that anyone can read instantly. BASE converts the most biologically meaningful signal in each recording into a single integer from 1 to 50 — the <strong>Activity Index</strong>.</p>
+        <p>For soil, that signal is the <strong>transient gate</strong> — the crest factor of the biological frequency band, already normalised to a 0–1 range. A signal full of sharp, sudden events (worms, larvae, roots) scores near 1. A smooth continuous sound (traffic, aircraft hum) scores near 0. For water, BASE uses the <strong>Acoustic Complexity Index (ACI)</strong> instead — a measure of how much the spectrum changes from one time window to the next. High variability means biological sounds; steady flatness means flow noise.</p>
+        <div class="formula">
+          <span class="formula-label">Index</span>
+          <span class="formula-eq">= clamp( round(signal × 49) + 1,  1,  50 )</span>
+        </div>
+        <p class="formula-note">Signal = transient gate (soil) or normalised ACI (water) — both in the range 0–1. Multiplying by 49 and adding 1 maps 0 → index 1 and 1 → index 50, giving a linear scale that always stays within bounds.</p>
+        <div class="activity-scale">
+          <div class="activity-band band-low">
+            <div class="band-range">1 – 16</div>
+            <div class="band-label">Low</div>
+            <div class="band-desc">Quiet conditions — little biological transient activity detected in this recording window</div>
+          </div>
+          <div class="activity-band band-mod">
+            <div class="band-range">17 – 33</div>
+            <div class="band-label">Moderate</div>
+            <div class="band-desc">Regular biological events — earthworm movement, invertebrate activity, or a varied aquatic soundscape</div>
+          </div>
+          <div class="activity-band band-high">
+            <div class="band-range">34 – 50</div>
+            <div class="band-label">High</div>
+            <div class="band-desc">Frequent sharp biological transients — active living soil or a rich aquatic chorus detected</div>
+          </div>
+        </div>
+        <p class="sai-note">The Activity Index is stored alongside the raw score in every detection record and written to the CSV export. It is broadcast live over MQTT and the WebSocket feed so the dashboard, gallery, and kiosk viewer can display it in real time.</p>
+      </div>
+
     </div>
   </section>
 
